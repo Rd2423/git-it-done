@@ -17,6 +17,10 @@ var getRepoIssues = function(repo) {
 
 
 var displayIssues =function(issues) {
+    if (issues.length === 0){
+        issueContainerEl.textContent = "This repo has no open issues!";
+        return;
+    }
     for (var i = 0; i < issues.length; i++) {
         var issueEl = document.createElement("a");
         issueEl.classList = "list-item flex-row justify-space-between align-center";
